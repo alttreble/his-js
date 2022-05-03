@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "prepublish": "ts-node src/schemaGenerator.ts",
+    "generate-schema": "ts-node scripts/schemaGenerator.ts",
     "lint": "eslint src/**/*.ts",
     "format": "eslint src/**/*.ts --fix"
   },
@@ -27,18 +27,16 @@
     "eslint": "^8.14.0",
     "husky": "^7.0.4",
     "jsdom": "^19.0.0",
-    "json-schema-to-typescript": "^10.1.5",
     "prettier": "^2.6.2",
     "ts-node": "^10.7.0",
-    "typescript": "^4.6.4",
-    "xsd2jsonschema": "^0.3.7"
+    "typescript": "^4.6.4"
   },
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint"
     }
   },
-  "dependencies": {
-    "cross-fetch": "^3.1.5"
+  "peerDependencies": {
+    "axios": "^0.27.2"
   }
 }
